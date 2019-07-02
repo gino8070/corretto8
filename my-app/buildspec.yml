@@ -4,13 +4,13 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn test
+      - mvn test -f my-app/
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvn package -f my-app/
 
 artifacts:
   files:
-    - target/my-app-1.0-SNAPSHOT.jar
+    - target/*
   discard-paths: yes
